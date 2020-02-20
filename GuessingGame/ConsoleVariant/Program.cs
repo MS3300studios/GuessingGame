@@ -12,6 +12,9 @@ namespace ConsoleVariant
             #region randomizing
             var random = new Random(); //creating random type object 
             int randomized = random.Next(1, 101);
+#if DEBUG//used only in DEBUG mode
+            Console.WriteLine(randomized);
+#endif
             Console.WriteLine("I randomized a number from 1 to 100.\nTry to guess it!");
             #endregion
 
