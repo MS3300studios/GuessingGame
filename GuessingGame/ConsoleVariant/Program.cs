@@ -8,14 +8,17 @@ namespace ConsoleVariant
         {
             Console.WriteLine("welcome to the Guessing game!");
 
-            // 1. computer randomizes
-            Random random = new Random(); //creating random type object 
+            // 1. computer randomizes a number
+            #region randomizing
+            var random = new Random(); //creating random type object 
             int randomized = random.Next(1, 101);
             Console.WriteLine("I randomized a number from 1 to 100.\nTry to guess it!");
+            #endregion
 
-            int counter = 1;
+            int counter = 1; //attempt counter
             bool isGuessed = false;
-            while (!isGuessed)   //until isGuessed not false
+
+            while (!isGuessed) //until isGuessed not false
             { 
                 // 2. user suggests a number
                 Console.Write("Enter a number: ");
