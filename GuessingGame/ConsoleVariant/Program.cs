@@ -14,34 +14,42 @@ namespace ConsoleVariant
             Console.WriteLine(randomized);
             Console.WriteLine("I randomized a number from 1 to 100.\nTry to guess it!");
 
-            // 2. user suggests a number
-            Console.Write("Enter a number: "); 
-            int userNumber = int.Parse( Console.ReadLine() ); //read a number from user and Parse it into a int type
-            
-            if (userNumber < randomized)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Your number is too small!");
-                Console.ResetColor();
-            }
-            else if (userNumber > randomized)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Your number is too big!");
-                Console.ResetColor();
-            }
-            else if (userNumber == randomized)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Congratulations! You have guessed correctly!");
-                Console.ResetColor();
-            }
-            else 
-            {
-                Console.WriteLine("That is not a number, try again.");
-            }
+            int counter = 1;
+            bool isGuessed = false;
+            while (!isGuessed)   //until isGuessed not false
+            { 
+                // 2. user suggests a number
+                Console.Write("Enter a number: ");
+                int userNumber = int.Parse(Console.ReadLine()); //read a number from user and Parse it into a int type
 
-            // 3. computer analyzes
+                // 3. computer analyzes the number
+                if (userNumber < randomized)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Your number is too small!");
+                    Console.ResetColor();
+                }
+                else if (userNumber > randomized)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Your number is too big!");
+                    Console.ResetColor();
+                }
+                else if (userNumber == randomized)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Congratulations! You have guessed correctly!");
+                    Console.WriteLine($"You guessed on attempt number: {counter}");
+                    Console.ResetColor();
+                    isGuessed = true;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a number, try again.");
+                }
+
+                counter++;
+            }
         }
     }
 }
