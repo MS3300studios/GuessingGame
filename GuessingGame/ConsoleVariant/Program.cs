@@ -11,7 +11,6 @@ namespace ConsoleVariant
             // 1. computer randomizes
             Random random = new Random(); //creating random type object 
             int randomized = random.Next(1, 101);
-            Console.WriteLine(randomized);
             Console.WriteLine("I randomized a number from 1 to 100.\nTry to guess it!");
 
             int counter = 1;
