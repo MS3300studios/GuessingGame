@@ -1,16 +1,20 @@
 ﻿using System;
+using System.Collections.Generic; //dostarcza kolekcji w stylu np List
 
 namespace GameModel
 {
     public class Game
     {
+        //data
         private readonly int randomized; //można przypisać (=) mu coś tylko tu albo w konstruktorze
         public GameStatus Status { get; private set; }
         
+        //methods
         public Game(int a = 1, int b = 100)
         {
             Random rnd = new Random();
             randomized = rnd.Next(a, b+1);
+            Status = GameStatus.Progressing;
         }
         public int Randomized
         {
@@ -34,7 +38,15 @@ namespace GameModel
                 Status = GameStatus.Finished;
                 return Anwsers.Score;
             }
+        } //publiczna metoda typu Anwsers (ten typ to enum)
+    
+        public void GiveUp()
+        {
+            Status = GameStatus.Finished;
         }
+
+        public List<Move> GameHistory { get; }
+    
     }
 
     public enum GameStatus
