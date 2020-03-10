@@ -15,6 +15,7 @@ namespace GameModel
             Random rnd = new Random();
             randomized = rnd.Next(a, b+1);
             Status = GameStatus.Progressing;
+            GameHistory = new List<Move>();
         }
         public int Randomized
         {
@@ -29,10 +30,17 @@ namespace GameModel
 
         public Anwsers Anwser(int proposal)
         {
+
             if (randomized < proposal)
+            {
+                GameHistory.Add(new Move(proposal, Anwsers.TooLittle));
                 return Anwsers.TooLittle;
+            }
             else if (randomized > proposal)
+            {
+                GameHistory.Add(new Move(proposal, Anwsers.TooMuch));
                 return Anwsers.TooMuch;
+            }
             else
             {
                 Status = GameStatus.Finished;
