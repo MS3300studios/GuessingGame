@@ -21,5 +21,11 @@ namespace GraphicalGame
         {
 
         }
+
+        private void ButtonNewGame_Click(object sender, EventArgs e)
+        {
+            groupBoxRandomizing.Visible = true;
+            ButtonNewGame.Enabled = false;
+        }
     }
 }
