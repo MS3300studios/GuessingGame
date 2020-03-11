@@ -31,12 +31,12 @@ namespace GameModel
         public Anwsers Anwser(int proposal)
         {
 
-            if (randomized < proposal)
+            if (randomized > proposal)
             {
                 GameHistory.Add(new Move(proposal, Anwsers.TooLittle));
                 return Anwsers.TooLittle;
             }
-            else if (randomized > proposal)
+            else if (randomized < proposal)
             {
                 GameHistory.Add(new Move(proposal, Anwsers.TooMuch));
                 return Anwsers.TooMuch;

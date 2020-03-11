@@ -38,8 +38,8 @@
             this.buttonStop = new System.Windows.Forms.Button();
             this.labelCommunicate1 = new System.Windows.Forms.Label();
             this.groupBoxProposal = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxProposal = new System.Windows.Forms.TextBox();
+            this.buttonConfirm = new System.Windows.Forms.Button();
             this.labelAnwser = new System.Windows.Forms.Label();
             this.groupBoxRandomizing.SuspendLayout();
             this.groupBoxProposal.SuspendLayout();
@@ -102,6 +102,7 @@
             this.textBoxScopeFrom.Name = "textBoxScopeFrom";
             this.textBoxScopeFrom.Size = new System.Drawing.Size(138, 20);
             this.textBoxScopeFrom.TabIndex = 1;
+            this.textBoxScopeFrom.TextChanged += new System.EventHandler(this.textBoxScopeFrom_TextChanged);
             // 
             // label1
             // 
@@ -135,8 +136,8 @@
             // groupBoxProposal
             // 
             this.groupBoxProposal.Controls.Add(this.labelAnwser);
-            this.groupBoxProposal.Controls.Add(this.button1);
-            this.groupBoxProposal.Controls.Add(this.textBox1);
+            this.groupBoxProposal.Controls.Add(this.buttonConfirm);
+            this.groupBoxProposal.Controls.Add(this.textBoxProposal);
             this.groupBoxProposal.Location = new System.Drawing.Point(28, 237);
             this.groupBoxProposal.Name = "groupBoxProposal";
             this.groupBoxProposal.Size = new System.Drawing.Size(251, 95);
@@ -145,26 +146,27 @@
             this.groupBoxProposal.Text = "Proposal";
             this.groupBoxProposal.Visible = false;
             // 
-            // textBox1
+            // textBoxProposal
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxProposal.Location = new System.Drawing.Point(13, 19);
+            this.textBoxProposal.Name = "textBoxProposal";
+            this.textBoxProposal.Size = new System.Drawing.Size(80, 20);
+            this.textBoxProposal.TabIndex = 0;
             // 
-            // button1
+            // buttonConfirm
             // 
-            this.button1.Location = new System.Drawing.Point(13, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Location = new System.Drawing.Point(129, 19);
+            this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.Size = new System.Drawing.Size(75, 23);
+            this.buttonConfirm.TabIndex = 1;
+            this.buttonConfirm.Text = "Confirm";
+            this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelAnwser
             // 
             this.labelAnwser.AutoSize = true;
-            this.labelAnwser.Location = new System.Drawing.Point(118, 20);
+            this.labelAnwser.Location = new System.Drawing.Point(90, 68);
             this.labelAnwser.Name = "labelAnwser";
             this.labelAnwser.Size = new System.Drawing.Size(35, 13);
             this.labelAnwser.TabIndex = 2;
@@ -204,8 +206,8 @@
         private System.Windows.Forms.Label labelCommunicate1;
         private System.Windows.Forms.GroupBox groupBoxProposal;
         private System.Windows.Forms.Label labelAnwser;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.TextBox textBoxProposal;
     }
 }
 
